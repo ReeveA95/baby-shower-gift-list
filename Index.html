@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower Gift List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #89c9b8;
+        }
+        .note {
+            background: #e9f5f3;
+            border-left: 5px solid #89c9b8;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        .filters {
+            margin-bottom: 20px;
+        }
+        .filters label {
+            margin-right: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #89c9b8;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .checkbox {
+            text-align: center;
+        }
+        input[type="checkbox"] {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Baby Shower Gift List</h1>
+</div>
+
+<div class="note">
+    <strong>Note:</strong> Because mom works in sustainability, we follow a sustainable lifestyle. Meaning we try to use eco-friendly, biodegradable, and natural materials as much as possible. Items already used by you or your child are also appreciated.
+</div>
+
+<div class="filters">
+    <label><input type="checkbox" id="filterUnchecked"> Show only unchecked</label>
+    <label for="categorySelect">Filter by category:</label>
+    <select id="categorySelect">
+        <option value="all">All</option>
+        <option value="GENERAL">GENERAL</option>
+        <option value="SPECIFIC">SPECIFIC</option>
+    </select>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th class="checkbox">Got?</th>
+        <th>Category</th>
+        <th>Item</th>
+        <th>Description</th>
+        <th>Recommendation</th>
+        <th>Comments</th>
+    </tr>
+    </thead>
+    <tbody id="giftTableBody">
+    <tr><td class="checkbox"><input type="checkbox" data-id="0"></td><td>GENERAL</td><td>Clothing</td><td>Clothing, booties, socks, beanies, vests, etc</td><td>Muted pastels or earthy tones. Denims, black, white, grey also welcome</td><td></td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="1"></td><td>GENERAL</td><td>Toiletries</td><td>Natural/Organic baby toiletries and baby wipes</td><td>Earth Sap, Himalaya, Pure beginnings, Oh lief, Moo & Yoo, Weleda, Alchemy, Jomar, Bently Organic, Earth Baby, Gaia, Mustela, Pigeon botanical</td><td>Clicks, Dischem, Woolworths, Baby-R-Us, Wellness Warehouse, Faithful to Nature, Takealot</td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="2"></td><td>GENERAL</td><td>Nappies</td><td>Huggies Extra Care or Huggies Gold</td><td>Any sizes</td><td></td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="3"></td><td>GENERAL</td><td>Textile</td><td>Blankets, receiving blankets, towels, wash clothes, burp cloths, bibs</td><td>Muted pastels or earthy tones; cotton or muslin preferred</td><td></td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="4"></td><td>GENERAL</td><td>Dummies</td><td>Dummies/Pacifiers, Dummy clips, teething rings</td><td>Medical-grade silicone, BPA-free, phthalates-free, PVC-free. No Latex.(NUK, Tommy Tippy, Frigg)</td><td><a href="https://fedisbest.co.za/product/frigg-daisy-silicone-pacifier-size-1/?attribute_pa_colour=biscuit&utm_source=google&utm_medium=cpc&utm_campaign=21642058994&gad_source=1&gad_campaignid=21642058994&gbraid=0AAAAA-Juh9yhDjY5OrCRZ4aXPMVThhI4d" target="_blank" rel="noopener noreferrer">Example</a></td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="5"></td><td>GENERAL</td><td>Toys</td><td>Baby toys</td><td>Muted pastels or earthy tones. BPA/Phthalates/PVC-free</td><td>Tiny love toys; check labels for non-toxic materials</td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="6"></td><td>SPECIFIC</td><td>Changing Mat</td><td>Waterproof, foam/leather mat</td><td>Grey or white</td><td></td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="7"></td><td>SPECIFIC</td><td>Baby Carrier</td><td>Comfortable ergonomic baby carrier</td><td>Ubuntu Baba Stage 1</td><td>Check Takealot or second-hand options</td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="8"></td><td>SPECIFIC</td><td>Breastfeeding Pillow</td><td>Support pillow for feeding</td><td>Natural cotton fabric preferred</td><td></td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="9"></td><td>SPECIFIC</td><td>Diaper Bag</td><td>Multi-pocket, durable bag</td><td>Neutral colors (grey, black, beige)</td><td></td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="10"></td><td>SPECIFIC</td><td>Car Seat</td><td>Safety car seat for infant</td><td>Maxi Cosi Pebble or Joie</td><td>Group 0+/1</td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="11"></td><td>SPECIFIC</td><td>baby comb and brush</td><td></td><td></td><td></td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="12"></td><td>SPECIFIC</td><td>Bath support pillow</td><td>anti-slip bath cushion for new borns</td><td></td><td><a href="https://www.babiesrus.co.za/microbead-bath-support-white?gad_source=1&gad_campaignid=20739785261&gbraid=0AAAAACpuWV34tRA38uuk2kcGBOI9ZgWuw" target="_blank" rel="noopener noreferrer">Example</a></td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="13"></td><td>SPECIFIC</td><td>Bath seat</td><td>non-slip bath seat</td><td></td><td></td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="14"></td><td>SPECIFIC</td><td>baby bath thermometer</td><td>bath thermometer</td><td></td><td></td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="15"></td><td>SPECIFIC</td><td>bottle warmer/sterilizer</td><td>BabyWombWorld Modern Electric Baby Bottle Sterilizer and Warmer with Light</td><td>This exact product please! Available on Takealot, Dischem and Baby City</td><td></td></tr>
+    <tr><td class="checkbox"><input type="checkbox" data-id="16"></td><td>SPECIFIC</td><td>car seat</td><td>would prefer a contribution towards one!</td><td></td><td></td></tr>
+
+    </tbody>
+</table>
+
+<script>
+    document.querySelectorAll('input[type="checkbox"][data-id]').forEach(checkbox => {
+        const saved = localStorage.getItem('giftCheckbox_' + checkbox.dataset.id);
+        checkbox.checked = saved === 'true';
+        checkbox.addEventListener('change', () => {
+            localStorage.setItem('giftCheckbox_' + checkbox.dataset.id, checkbox.checked);
+            applyFilters();
+        });
+    });
+
+    const filterUnchecked = document.getElementById('filterUnchecked');
+    const categorySelect = document.getElementById('categorySelect');
+
+    filterUnchecked.addEventListener('change', applyFilters);
+    categorySelect.addEventListener('change', applyFilters);
+
+    function applyFilters() {
+        const onlyUnchecked = filterUnchecked.checked;
+        const selectedCategory = categorySelect.value;
+        document.querySelectorAll('#giftTableBody tr').forEach(row => {
+            const checkbox = row.querySelector('input[type="checkbox"]');
+            const category = row.cells[1].textContent.trim();
+            const matchesUnchecked = !onlyUnchecked || !checkbox.checked;
+            const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
+            row.style.display = matchesUnchecked && matchesCategory ? '' : 'none';
+        });
+    }
+</script>
+
+</body>
+</html>
+
