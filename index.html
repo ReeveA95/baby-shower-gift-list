@@ -203,6 +203,23 @@
     }
 </script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"][data-id]');
+
+        // Restore checkbox state from localStorage
+        checkboxes.forEach((checkbox, index) => {
+            const saved = localStorage.getItem('checkbox_' + index);
+            checkbox.checked = saved === 'true';
+
+            // Save on change
+            checkbox.addEventListener('change', function () {
+                localStorage.setItem('checkbox_' + index, checkbox.checked);
+            });
+        });
+    });
+</script>    
+
 </body>
 </html>
 
