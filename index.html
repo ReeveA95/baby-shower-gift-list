@@ -220,6 +220,48 @@
     });
 </script>    
 
+<!-- Firebase v12 with Realtime Database (non-module version) -->
+<script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-database-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDUXORDtBUZiVBHqkkzpgrYUtyZknoGGQo",
+    authDomain: "baby-shower-checklist.firebaseapp.com",
+    databaseURL: "https://baby-shower-checklist-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "baby-shower-checklist",
+    storageBucket: "baby-shower-checklist.firebasestorage.app",
+    messagingSenderId: "1005904049285",
+    appId: "1:1005904049285:web:8c7925d6a5ad1c2fa425ec"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  // Simple user ID for now (replace with auth later if needed)
+  const userId = "defaultUser";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"][data-id]');
+
+    // Load from Firebase
+    db.ref(`checklists/${userId}`).once("value").then(snapshot => {
+      const data = snapshot.val() || {};
+      checkboxes.forEach((checkbox) => {
+        const id = checkbox.getAttribute('data-id');
+        checkbox.checked = data[id] || false;
+
+        // Save on change
+        checkbox.addEventListener("change", () => {
+          db.ref(`checklists/${userId}/${id}`).set(checkbox.checked);
+        });
+      });
+    });
+  });
+</script>
+
+
 </body>
 </html>
 
